@@ -5,7 +5,11 @@ Few helpers to process all of the files in some folder with promises
 - node 6
 
 ## How to install
-- `npm install node-all-files`
+###### From NPM
+`npm install node-all-files`
+
+###### or from Github
+`npm install https://github.com/asci/all-files`
 
 ## How to use
 ### getFilenames
