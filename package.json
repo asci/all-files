@@ -1,0 +1,22 @@
+{
+  "name": "node-all-files",
+  "version": "1.0.0",
+  "description": "Few helpers to process all of the files in some folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asci/all-files.git"
+  },
+  "keywords": [
+    "files"
+  ],
+  "author": "Artem Riasnianskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asci/all-files/issues"
+  },
+  "homepage": "https://github.com/asci/all-files#readme"
+}
