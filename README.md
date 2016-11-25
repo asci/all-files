@@ -15,12 +15,17 @@ Few helpers to process all of the files in some folder with promises
 ### getFilenames
 Getting all `*.js` files in folder `./test-dir`:
 
-```
-const {getFilenames} = require('node-all-files');
+```javascript
+const { getFilenames } = require('node-all-files');
 const folder = __dirname + '/test-dir';
-const isJS = /\.js$/i;
 
-getFilenames(folder, isJS.test.bind(isJS)).then(({ files }) => {
+// Supports RegExp, String and Function for filtering:
+getFilenames(root, /\.js$/i);
+//or
+getFilenames(root, '.js');
+//or
+getFilenames(root, (f) => ~f.indexOf('.js'))
+.then(({ files }) => {
   console.log(files);
 });
 
@@ -28,8 +33,8 @@ getFilenames(folder, isJS.test.bind(isJS)).then(({ files }) => {
 ### processFiles
 Showing content length of the files
 
-```
-const {processFiles} = require('node-all-files');
+```javascript
+const { processFiles } = require('node-all-files');
 const files = [__filename];
 
 processFiles(files, (buff) => {
