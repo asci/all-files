@@ -37,5 +37,5 @@ jspm_packages
 .node_repl_history
 
 .git
-test-dir
-test.js
+tests
+lib

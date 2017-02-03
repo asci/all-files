@@ -2,9 +2,10 @@
   "name": "node-all-files",
   "version": "1.0.0",
   "description": "Few helpers to process all of the files in some folder",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "node test.js"
+    "build": "BABEL_ENV=production babel --copy-files ./src --out-dir lib",
+    "test": "node tests/test.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/asci/all-files/issues"
   },
-  "homepage": "https://github.com/asci/all-files#readme"
+  "homepage": "https://github.com/asci/all-files#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.22.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  }
 }
