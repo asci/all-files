@@ -1,6 +1,6 @@
 {
   "name": "node-all-files",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Few helpers to process all of the files in some folder",
   "main": "lib/index.js",
   "scripts": {
