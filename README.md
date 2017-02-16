@@ -36,8 +36,16 @@ const { processFiles } = require('node-all-files');
 const files = [__filename];
 
 processFiles(files, (buff, filename) => {
+  // process file immediately
   console.log(buff.toString().length);
-}).then(() => {
+
+  // or return Promise
+  return new Promise((resolve) => {
+    setTimeout(resolve, 100);
+  });
+}).then(({results, errors}) => {
+  // results - array of results
+  // errors - object (map) with filename as key, and error (or reject reason) as value
   console.log('All files were processed');
 });
 

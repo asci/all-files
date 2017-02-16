@@ -19,7 +19,9 @@ module.exports = function processFiles(filenames, processor) {
         try {
           result = processor(buff, filename);
         } catch (err) {
-          return reject(err);
+          errors[filename] = err;
+          resolve();
+          return;
         }
 
         // if it is a Promise-like object - wait for resolving
@@ -36,5 +38,10 @@ module.exports = function processFiles(filenames, processor) {
     });
   });
 
-  return Promise.all(promises);
+  return Promise.all(promises).then((results) => {
+    return {
+      results: results,
+      errors: errors
+    };
+  });
 }
