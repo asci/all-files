@@ -7,10 +7,11 @@ Helpers to process files recursively in folder with promises
 
 ## How to install
 ###### From NPM
-`npm install node-all-files`
+`npm install node-all-files` or `yarn add node-all-files`
 
 ## How to use
 ### getFilenames
+
 Getting all `*.js` files in folder `./test-dir`:
 
 ```javascript
