@@ -1,11 +1,10 @@
 {
   "name": "node-all-files",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Few helpers to process all of the files in some folder",
   "main": "lib/index.js",
   "scripts": {
     "build": "BABEL_ENV=production babel --copy-files ./src --out-dir lib",
-    "ci": "npm run test",
     "test": "node tests/test.js"
   },
   "repository": {
