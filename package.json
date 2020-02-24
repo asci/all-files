@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "BABEL_ENV=production babel --copy-files ./src --out-dir lib",
-    "test": "node tests/test.js",
-    "prepublish": "npm run build"
+    "ci": "npm run test",
+    "test": "node tests/test.js"
   },
   "repository": {
     "type": "git",
