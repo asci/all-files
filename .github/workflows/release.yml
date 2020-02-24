@@ -25,14 +25,14 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm version minor
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
           git commit -m 'Add changes' -a
+      - run: npm version minor
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - uses: ad-m/github-push-action@master
         with:
           branch: release
