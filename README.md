@@ -1,4 +1,7 @@
 # all-files
+
+![Build](https://github.com/asci/all-files/workflows/Build/badge.svg?branch=master) ![NPM](https://img.shields.io/npm/v/node-all-files.svg)
+
 Helpers to process files recursively in folder with promises
 
 ## Prereq
