@@ -1,9 +1,8 @@
 name: Publish Release
 
 on:
-  push:
-    branches:
-    - release
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -26,6 +25,9 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: npm version minor
+      - run: git add package.json
       - run: npm publish
+      - run: git push origin release:release
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
