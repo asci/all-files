@@ -30,11 +30,11 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: |
+      - run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
           git commit -m 'Add changes' -a
-        uses: ad-m/github-push-action@master
+      - uses: ad-m/github-push-action@master
         with:
           branch: release
           github_token: ${{secrets.GITHUB_TOKEN}}
