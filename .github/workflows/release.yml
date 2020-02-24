@@ -19,7 +19,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Publish to NPM
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - uses: ad-m/github-push-action@v0.5.0
@@ -31,12 +30,10 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      - name: Commit files
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
           git commit -m 'Add changes' -a
-      - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           branch: release
