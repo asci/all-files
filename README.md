@@ -1,6 +1,6 @@
 # all-files
 
-![Build](https://github.com/asci/all-files/workflows/Build/badge.svg)
+![Build](https://github.com/asci/all-files/workflows/Build/badge.svg?branch=master)
 
 Helpers to process files recursively in folder with promises
 
